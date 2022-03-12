@@ -42,9 +42,10 @@
           <td><%= @one_week_book.count %></td>
           <td><%= @two_week_book.count %></td>
           <td>
-            <% if @one_week_book.count == 0 %>
-              前日の投稿はありません
-            
+            <% if @two_week_book.count == 0 %>
+              前週の投稿はありません
+            <% else %>
+              <%= @the_week_before.round %>
             <% end %>
           </td>
         </tr>
