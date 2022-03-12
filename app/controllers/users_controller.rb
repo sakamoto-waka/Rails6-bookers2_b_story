@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     @book = Book.new
     @today_book = @books.created_today
     @yesterday_book = @books.created_yesterday
+    @the_day_before = @today_book.count / @yesterday_book.count.to_f * 100
   end
 
   def index

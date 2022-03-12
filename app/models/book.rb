@@ -25,4 +25,5 @@ class Book < ApplicationRecord
       Book.where('title LIKE ? OR body LIKE ?', "%#{word}%", "%#{word}%")
     end
   end
+
 end
