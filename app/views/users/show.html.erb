@@ -19,8 +19,8 @@
           </tr>
         </thead>  
         <tr>
-        <td><%= @user.books.where('created_at > ?', Date.today).count %></td>
-        <td><%= @user.books.where('created_at > ?', Date.yesterday).count %></td>
+        <td><%= @today_book.count %></td>
+        <td><%= @yesterday_book.count %></td>
         
         </tr>
       </table>  
