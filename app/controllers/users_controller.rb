@@ -9,9 +9,8 @@ class UsersController < ApplicationController
     @yesterday_book = @books.created_yesterday
     @the_day_before = @today_book.count / @yesterday_book.count.to_f * 100
     
-    @one_week_book = @books.where(created_at: 1.week.ago.beginning_of_day..Time.zone.now.end_of_day)
-    two_weeks_ago = @books.where(created_at: 2.week.ago.beginning_of_day..Time.zone.now.end_of_day)
-    @two_week_book = two_weeks_ago - @one_week_book
+    @one_week_book = @books.created_one_week
+    @two_week_ago = @books.created_two_week
     @the_week_before = @one_week_book.count / @two_week_book.count.to_f * 100
     
   end
