@@ -30,6 +30,25 @@
         </td>
         </tr>
       </table>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>今週の投稿数</th>
+            <th>先週の投稿数</th>
+            <th>前週比</th>
+          </tr>
+        </thead>
+        <tr>
+          <td><%= @one_week_book.count %></td>
+          <td><%= @two_week_book.count %></td>
+          <td>
+            <% if @one_week_book.count == 0 %>
+              前日の投稿はありません
+            
+            <% end %>
+          </td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

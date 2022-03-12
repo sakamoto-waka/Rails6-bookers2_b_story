@@ -8,7 +8,7 @@ class Book < ApplicationRecord
 
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
   scope :created_yesterday, -> { where(created_at: 1.day.ago.all_day) }
-
+  
   def favorited_by?(user)
     favorites.exists?(user_id: user.id)
   end
