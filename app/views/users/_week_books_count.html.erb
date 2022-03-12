@@ -1,0 +1,20 @@
+<thead>
+  <tr>
+    <th>今週の投稿数</th>
+    <th>先週の投稿数</th>
+    <th>前週比</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><%= one_week_book.count %></td>
+    <td><%= last_week_book.count %></td>
+    <td>
+      <% if last_week_book.count == 0 %>
+        先週の投稿はありません
+      <% else %>
+        <%= the_week_before.round %>
+      <% end %>
+    </td>
+  </tr>
+</tbody>
