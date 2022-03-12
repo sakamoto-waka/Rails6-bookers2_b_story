@@ -11,44 +11,10 @@
       <%= render 'books/index',books: @books %>
       <h2>投稿数の前日比・前週比</h2>
       <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>今日の投稿数</th>
-            <th>前日の投稿数</th>
-            <th>前日比</th>
-          </tr>
-        </thead>
-        <tr>
-        <td><%= @today_book.count %></td>
-        <td><%= @yesterday_book.count %></td>
-        <td>
-          <% if @yesterday_book.count == 0 %>
-            前日の投稿はありません
-          <% else %>
-          　<%= @the_day_before.round %>
-          <% end %>
-        </td>
-        </tr>
+        <%= render 'day_books_count', today_book: @today_book, yesterday_book: @yesterday_book, the_day_before: @the_day_before %>
       </table>
       <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>今週の投稿数</th>
-            <th>先週の投稿数</th>
-            <th>前週比</th>
-          </tr>
-        </thead>
-        <tr>
-          <td><%= @one_week_book.count %></td>
-          <td><%= @two_week_book.count %></td>
-          <td>
-            <% if @two_week_book.count == 0 %>
-              先週の投稿はありません
-            <% else %>
-              <%= @the_week_before.round %>
-            <% end %>
-          </td>
-        </tr>
+        <%= render 'week_books_count', this_week_book: @this_week_book, last_week_book: @last_week_book, the_week_before: @the_week_before %>
       </table>
     </div>
   </div>
