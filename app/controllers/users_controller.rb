@@ -13,6 +13,8 @@ class UsersController < ApplicationController
     @last_week_book = @books.created_last_week
     @the_week_before = @this_week_book.count / @last_week_book.count.to_f * 100
 
+    @all_books = @books.six_days_book + [@today_book.count]
+
   end
 
   def index
