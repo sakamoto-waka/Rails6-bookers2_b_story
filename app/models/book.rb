@@ -9,8 +9,8 @@ class Book < ApplicationRecord
   scope :created_today, -> { where(created_at: Time.zone.now.all_day) }
   scope :created_days_ago, -> (n){ where(created_at: n.days.ago.all_day) }
   
-  def seven_days_book
-    
+  def self.seven_days_book(n)
+    (1..6).map{ |n| created_days_ago(n).count }.rev
   end  
   
   scope :created_this_week, -> { where(created_at: 1.week.ago.beginning_of_day..Time.zone.now.end_of_day)}
