@@ -55,4 +55,5 @@ class User < ApplicationRecord
       User.where('name LIKE ?', "%#{word}%")
     end
   end
+
 end
