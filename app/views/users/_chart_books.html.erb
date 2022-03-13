@@ -7,6 +7,8 @@
 </thead>
 <tbody>
   <tr>
-    <td><%= user.seven_days_booka %></td>
+    <% books.seven_days_book.each do |day_count| %>
+      <td><%= day_count %></td>
+    <% end %>
   </tr>
 </tbody>
