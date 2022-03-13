@@ -12,7 +12,7 @@
       <!--<h2>投稿数の前日比・前週比</h2>-->
       <h2>7日間分の投稿数</h2>
       <table class="table table-bordered">
-        <%= render 'chart_books', books: @books %>
+        <%= render 'chart_books', books: @books, today_book: @today_book %>
       </table>
       <table class="table table-bordered">
 

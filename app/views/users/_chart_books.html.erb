@@ -3,6 +3,7 @@
     <% (1..6).reverse_each do |num| %>
       <th><%= num %>日前</th>
     <% end %>
+    <th>今日</th>
   </tr>
 </thead>
 <tbody>
@@ -10,5 +11,6 @@
     <% books.seven_days_book.each do |day_count| %>
       <td><%= day_count %></td>
     <% end %>
+    <td><%= today_book.count %></td>
   </tr>
 </tbody>
