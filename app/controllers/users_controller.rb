@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @books = @user.books
     @book = Book.new
     @today_book = @books.created_today
-    @yesterday_book = @books.created_yesterday
+    @yesterday_book = @books.created_days_ago(1)
     @the_day_before = @today_book.count / @yesterday_book.count.to_f * 100
 
     @this_week_book = @books.created_this_week
