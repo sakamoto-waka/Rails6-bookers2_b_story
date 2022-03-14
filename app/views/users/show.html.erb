@@ -65,16 +65,17 @@
       <!--  });-->
       <!--</script>-->
       <!--<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>-->
-      <%= form_with url: user_search_book_path(user_id: @user.id), method: :get do |f| %>
+      <%= form_with url: user_search_book_path(@user), method: :get, local: false do |f| %>
         <%= f.date_field :created_at %>
         <%= f.submit '検索' %>
       <% end %>
-      <h3>検索結果</h3>
-      <table class="table table-bordered">
+      ">
         <div id="search_result">
-          <%= render 'search_book', search_book: @search_book %>
+          <% if @search_book.present? %>
+            <%= render 'search_book', search_book: @search_book %>
+          <% end %>
         </div>
-      </table>
+
 
     </div>
   </div>
